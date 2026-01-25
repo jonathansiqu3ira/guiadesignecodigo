@@ -1,20 +1,25 @@
 import { cn } from "@/lib/utils";
 
-interface StatusBadgeProps {
+
+export interface StatusBadgeProps {
+  children?: React.ReactNode;
   className?: string;
 }
 
-export function StatusBadge({ className }: StatusBadgeProps) {
+export function StatusBadge({ children = "Em produção", className }: StatusBadgeProps) {
+  const text = typeof children === 'string' ? children : "Em produção";
+
   return (
     <span 
+      title={text}
       className={cn(
-        "inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium",
-        "bg-zinc-100 text-zinc-600 border border-zinc-200",
-        "dark:bg-zinc-800 dark:text-zinc-400 dark:border-zinc-700",
+        "inline-flex items-center justify-center px-1.5 py-0.5 rounded text-[10px] font-medium whitespace-nowrap overflow-hidden text-ellipsis max-w-[100px]",
+        "bg-zinc-100 text-zinc-500 border border-zinc-200",
+        "dark:bg-zinc-800 dark:text-zinc-500 dark:border-zinc-700",
         className
       )}
     >
-      Em produção
+      {children}
     </span>
   );
 }

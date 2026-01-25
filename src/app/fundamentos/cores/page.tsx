@@ -12,7 +12,7 @@ export default function CoresPage() {
         <StatusBadge />
       </div>
       <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
-        Paleta de cores e sistema semântico.
+        O sistema de cores abordará o uso semântico de tokens, garantindo consistência e acessibilidade. Veremos como criar paletas escaláveis, entender o papel das cores funcionais (sucesso, erro, alerta) e como implementar suporte a dark mode via variáveis CSS.
       </p>
     </div>
   );

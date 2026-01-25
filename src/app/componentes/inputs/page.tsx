@@ -12,7 +12,7 @@ export default function InputsPage() {
         <StatusBadge />
       </div>
       <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
-        Campos de entrada de texto e formulários.
+        A base de formulários robustos. Discutiremos estados de validação, feedback visual, máscaras e acessibilidade em campos de entrada. O objetivo é criar inputs que guiem o usuário e previnam erros antes do envio.
       </p>
     </div>
   );

@@ -7,30 +7,41 @@
 }
 
 :root {
-  /* Technical Off-White Theme */
-  --background: #FAFAFA;
-  --foreground: #171717;
+  /* Refined Light Theme */
+  --background: #FFFFFF;
+  --surface: #F4F4F5; /* Zinc-100 */
+  --foreground: #09090B; /* Zinc-950 */
+  --foreground-muted: #71717A; /* Zinc-500 */
+  --border: #E4E4E7; /* Zinc-200 */
   
-  /* Border colors for technical look */
-  --technical-border: #E5E5E5;
+  /* Legacy/Technical compatibility */
+  --technical-border: var(--border);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0F0F0F;
-    --foreground: #E5E5E5;
-    --technical-border: #2A2A2A;
-  }
+.dark {
+  /* Refined Dark Theme */
+  --background: #09090B; /* Zinc-950 - Avoid pure black */
+  --surface: #18181B; /* Zinc-900 */
+  --foreground: #FAFAFA; /* Zinc-50 */
+  --foreground-muted: #A1A1AA; /* Zinc-400 */
+  --border: #27272A; /* Zinc-800 */
+  
+  --technical-border: var(--border);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 @layer utilities {
   .technical-border {
     @apply border border-[var(--technical-border)];
+  }
+
+  .focus-ring {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-zinc-500 focus-visible:ring-offset-2 focus-visible:ring-offset-[var(--background)];
   }
 }

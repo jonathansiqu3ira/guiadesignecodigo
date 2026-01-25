@@ -12,7 +12,7 @@ export default function BotoesPage() {
         <StatusBadge />
       </div>
       <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
-        Componentes de botão e suas variações.
+        Muito além do clique. Vamos detalhar a anatomia de botões, variantes (primary, secondary, ghost), estados (hover, focus, disabled) e como implementar componentes de botão acessíveis e flexíveis com React e Tailwind.
       </p>
     </div>
   );

@@ -12,7 +12,7 @@ export default function GridPage() {
         <StatusBadge />
       </div>
       <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
-        Sistema de grid e responsividade.
+        Estruturando layouts sólidos e responsivos. O foco será em systems grid de 8pt, alinhamento, espaçamento consistente e como traduzir conceitos de colunas e grids fluidos do design para Flexbox e CSS Grid.
       </p>
     </div>
   );
