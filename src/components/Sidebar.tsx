@@ -23,7 +23,7 @@ const navigation: NavSection[] = [
     items: [
       { label: 'Introdução', href: '/' },
       { label: 'Sobre', href: '/sobre' },
-      { label: 'Design & Código', href: '/fundamentos/design-codigo', status: 'in_progress' },
+      { label: 'Design & Código', href: '/fundamentos/design-codigo', status: 'available' },
       { label: 'Referências', href: '/referencias', status: 'in_progress' },
     ]
   },

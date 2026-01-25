@@ -10,9 +10,9 @@ export default function DesignCodigoPage() {
              <h1 className="text-4xl font-medium tracking-tight text-[var(--foreground)]">
               Relação Design e Código
             </h1>
-            <Badge variant="in_progress">Em andamento</Badge>
+            <Badge variant="available">Disponível</Badge>
           </div>
-          <div className="space-y-4 text-xl text-zinc-600 dark:text-zinc-500 dark:text-zinc-400 max-w-2xl leading-relaxed">
+          <div className="space-y-4 text-xl text-zinc-600 dark:text-zinc-500 max-w-2xl leading-relaxed">
             <h2 className="text-2xl font-medium text-[var(--foreground)] mb-2">Design não termina no Figma</h2>
             <p>
               O layout é apenas uma parte da decisão.
@@ -24,6 +24,18 @@ export default function DesignCodigoPage() {
               Design que não considera código não termina. Ele é interrompido.
             </p>
           </div>
+          
+           {/* Complementary: Responsabilidade compartilhada */}
+           <div className="space-y-4 text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl">
+              <h3 className="text-xl font-medium text-[var(--foreground)]">Responsabilidade compartilhada</h3>
+              <p>
+                Design e código não são etapas separadas.
+                São responsabilidades diferentes sobre a mesma experiência.
+              </p>
+              <p>
+                Quando uma decisão não é discutida entre as duas áreas, alguém vai pagar esse custo depois. Normalmente o usuário.
+              </p>
+           </div>
         </header>
 
         <hr className="border-[var(--technical-border)]" />
@@ -32,7 +44,7 @@ export default function DesignCodigoPage() {
           <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">
             Código também é experiência
           </h2>
-          <div className="prose prose-zinc dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-500 dark:text-zinc-400">
+          <div className="prose prose-zinc dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400">
             <p>
               Código não é neutro. Escolhas técnicas impactam:
             </p>
@@ -52,72 +64,102 @@ export default function DesignCodigoPage() {
         <hr className="border-[var(--technical-border)]" />
 
         <section className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <div className="space-y-4">
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">
-              Onde o ruído acontece
-            </h2>
-            <div className="space-y-2 text-[var(--foreground)]">
-              <p className="text-sm text-zinc-500 mb-4">
-                Alguns sinais comuns de desalinhamento entre design e código:
-              </p>
-              <ul className="space-y-3 text-zinc-700 dark:text-zinc-300 text-sm">
-                <li className="flex items-start">
-                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
-                  componentes sem estados definidos
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
-                  tokens visuais que não existem no código
-                </li>
-                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
-                  layouts impossíveis de escalar
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
-                  ajustes feitos “só no CSS”
-                </li>
-                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
-                  decisões que não voltam para o design
-                </li>
-              </ul>
-              <p className="text-sm font-medium mt-4 pt-4 border-t border-[var(--technical-border)]">
-                Nada disso é falha de uma área só. É falta de visão sistêmica.
-              </p>
+          <div className="space-y-8">
+            <div className="space-y-4">
+              <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">
+                Onde o ruído acontece
+              </h2>
+              <div className="space-y-2 text-[var(--foreground)]">
+                <p className="text-sm text-zinc-500 mb-4">
+                  Alguns sinais comuns de desalinhamento entre design e código:
+                </p>
+                <ul className="space-y-3 text-zinc-700 dark:text-zinc-300 text-sm">
+                  <li className="flex items-start">
+                    <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
+                    componentes sem estados definidos
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
+                    tokens visuais que não existem no código
+                  </li>
+                   <li className="flex items-start">
+                    <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
+                    layouts impossíveis de escalar
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
+                    ajustes feitos “só no CSS”
+                  </li>
+                   <li className="flex items-start">
+                    <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
+                    decisões que não voltam para o design
+                  </li>
+                </ul>
+                <p className="text-sm font-medium mt-4 pt-4 border-t border-[var(--technical-border)]">
+                  Nada disso é falha de uma área só. É falta de visão sistêmica.
+                </p>
+              </div>
+            </div>
+
+            {/* Complementary: Exemplo mental simples */}
+            <div className="space-y-4 pt-4">
+               <h3 className="text-sm font-medium text-[var(--foreground)]">Exemplo mental simples</h3>
+               <div className="text-sm text-zinc-600 dark:text-zinc-400 space-y-2">
+                 <p>
+                   Um botão sem estados no design não é um botão incompleto.
+                   É uma decisão adiada.
+                 </p>
+                 <p>
+                   Hover, focus, disabled e loading não surgem no código por acaso.
+                   Eles precisam existir no raciocínio.
+                 </p>
+               </div>
             </div>
           </div>
 
-           <div className="space-y-4">
-            <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">
-              Pensar como Design Technologist
-            </h2>
-             <div className="space-y-4 text-[var(--foreground)]">
-              <p className="text-sm text-zinc-500 mb-4">
-                 Pensar como Design Technologist não é virar desenvolvedor. É entender o suficiente para decidir melhor. Isso envolve:
-              </p>
-              <ul className="space-y-3 text-zinc-700 dark:text-zinc-300 text-sm">
-                <li className="flex items-start">
-                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
-                  desenhar componentes reutilizáveis
-                </li>
-                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
-                  pensar em tokens, não em valores soltos
-                </li>
-                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
-                  considerar limites técnicos reais
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
-                  facilitar implementação e manutenção
-                </li>
-                <li className="flex items-start">
-                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
-                   preservar a experiência ao longo do tempo
-                </li>
-              </ul>
+           <div className="space-y-8">
+            <div className="space-y-4">
+              <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">
+                Pensar como Design Technologist
+              </h2>
+               <div className="space-y-4 text-[var(--foreground)]">
+                <p className="text-sm text-zinc-500 mb-4">
+                   Pensar como Design Technologist não é virar desenvolvedor. É entender o suficiente para decidir melhor. Isso envolve:
+                </p>
+                <ul className="space-y-3 text-zinc-700 dark:text-zinc-300 text-sm">
+                  <li className="flex items-start">
+                    <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
+                    desenhar componentes reutilizáveis
+                  </li>
+                   <li className="flex items-start">
+                    <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
+                    pensar em tokens, não em valores soltos
+                  </li>
+                    <li className="flex items-start">
+                    <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
+                    considerar limites técnicos reais
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
+                    facilitar implementação e manutenção
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
+                     preservar a experiência ao longo do tempo
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Complementary: Trade-offs reais */}
+             <div className="space-y-4 pt-4">
+               <h3 className="text-sm font-medium text-[var(--foreground)]">Trade-offs reais</h3>
+               <div className="text-sm text-zinc-600 dark:text-zinc-400 space-y-2">
+                 <p>
+                   Nem toda decisão é perfeita. Algumas são possíveis.
+                   Bons produtos não são feitos de escolhas ideais, mas de escolhas conscientes.
+                 </p>
+               </div>
             </div>
           </div>
         </section>
@@ -142,6 +184,15 @@ export default function DesignCodigoPage() {
              <p className="mt-4 font-medium text-[var(--foreground)]">
                Mas só funciona se for pensado para uso real, não apresentação.
             </p>
+            
+            {/* Complementary: Design System como meio, não fim */}
+            <div className="mt-6 pt-6 border-t border-[var(--technical-border)]">
+               <h3 className="text-lg font-medium text-[var(--foreground)] mb-2">Design System como meio, não fim</h3>
+               <p>
+                 Se o Design System não é usado no dia a dia, ele não é um sistema.
+                 É documentação morta.
+               </p>
+            </div>
           </div>
         </section>
 
@@ -164,6 +215,20 @@ export default function DesignCodigoPage() {
            <p className="text-[var(--foreground)] mt-6 text-sm">
              O foco não é ferramenta. É raciocínio aplicado.
           </p>
+
+          {/* Complementary: Fechamento */}
+          <div className="mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-800">
+             <div className="text-[var(--foreground)] space-y-2">
+                <p className="font-medium">
+                  Este guia não ensina telas.
+                  Ensina decisões.
+                </p>
+                <p className="text-zinc-600 dark:text-zinc-400">
+                  Porque interfaces mudam.
+                  Mas decisões bem pensadas sobrevivem ao código.
+                </p>
+             </div>
+          </div>
         </section>
       </div>
 
