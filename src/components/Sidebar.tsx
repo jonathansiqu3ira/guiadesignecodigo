@@ -99,7 +99,7 @@ export function Sidebar() {
                   <ChevronRight 
                     size={14} 
                     className={cn(
-                      "text-zinc-400 transition-transform duration-200",
+                      "text-zinc-500 dark:text-zinc-400 transition-transform duration-200",
                       isOpen && "rotate-90"
                     )} 
                   />
@@ -119,7 +119,7 @@ export function Sidebar() {
                           href={item.href}
                           className={cn(
                             "flex items-center justify-between py-1.5 px-2 text-sm rounded-md transition-colors focus-ring group",
-                            "text-zinc-600 hover:text-black hover:bg-zinc-100 dark:text-zinc-400 dark:hover:text-white dark:hover:bg-zinc-800/50"
+                            "text-zinc-600 hover:text-black hover:bg-zinc-100 dark:text-zinc-500 dark:text-zinc-400 dark:hover:text-white dark:hover:bg-zinc-800/50"
                           )}
                         >
                           <span>{item.label}</span>
@@ -143,7 +143,7 @@ export function Sidebar() {
       </nav>
       
       <div className="p-6 border-t border-[var(--technical-border)] flex items-center justify-between">
-        <div className="text-xs text-zinc-400">
+        <div className="text-xs text-zinc-500 dark:text-zinc-400">
           v0.1.1
         </div>
         <ThemeToggle />

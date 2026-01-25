@@ -12,7 +12,7 @@ export default function DesignCodigoPage() {
             </h1>
             <Badge variant="in_progress">Em andamento</Badge>
           </div>
-          <div className="space-y-4 text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
+          <div className="space-y-4 text-xl text-zinc-600 dark:text-zinc-500 dark:text-zinc-400 max-w-2xl leading-relaxed">
             <h2 className="text-2xl font-medium text-[var(--foreground)] mb-2">Design não termina no Figma</h2>
             <p>
               O layout é apenas uma parte da decisão.
@@ -32,7 +32,7 @@ export default function DesignCodigoPage() {
           <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">
             Código também é experiência
           </h2>
-          <div className="prose prose-zinc dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400">
+          <div className="prose prose-zinc dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-500 dark:text-zinc-400">
             <p>
               Código não é neutro. Escolhas técnicas impactam:
             </p>
@@ -62,23 +62,23 @@ export default function DesignCodigoPage() {
               </p>
               <ul className="space-y-3 text-zinc-700 dark:text-zinc-300 text-sm">
                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   componentes sem estados definidos
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   tokens visuais que não existem no código
                 </li>
                  <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   layouts impossíveis de escalar
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   ajustes feitos “só no CSS”
                 </li>
                  <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   decisões que não voltam para o design
                 </li>
               </ul>
@@ -98,23 +98,23 @@ export default function DesignCodigoPage() {
               </p>
               <ul className="space-y-3 text-zinc-700 dark:text-zinc-300 text-sm">
                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   desenhar componentes reutilizáveis
                 </li>
                  <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   pensar em tokens, não em valores soltos
                 </li>
                  <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   considerar limites técnicos reais
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   facilitar implementação e manutenção
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                    preservar a experiência ao longo do tempo
                 </li>
               </ul>
@@ -126,7 +126,7 @@ export default function DesignCodigoPage() {
           <h2 className="text-xl font-medium text-[var(--foreground)]">
             Design Systems como ponte
           </h2>
-          <div className="prose prose-zinc dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400">
+          <div className="prose prose-zinc dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-500 dark:text-zinc-400">
             <p>
               Um Design System não é um arquivo bonito. Ele é uma linguagem compartilhada entre design e código.
             </p>

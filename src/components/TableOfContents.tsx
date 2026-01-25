@@ -87,7 +87,7 @@ export function TableOfContents() {
         className="flex items-center gap-2 group w-full text-left"
       >
          <div className={cn(
-           "text-zinc-400 transition-transform duration-200",
+           "text-zinc-500 dark:text-zinc-400 transition-transform duration-200",
            isExpanded ? "rotate-90" : ""
          )}>
            <ChevronRight size={14} />

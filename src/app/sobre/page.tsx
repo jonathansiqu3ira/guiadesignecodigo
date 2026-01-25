@@ -12,7 +12,7 @@ export default function SobrePage() {
             </h1>
             <Badge variant="in_progress">Em andamento</Badge>
           </div>
-          <div className="space-y-4 text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
+          <div className="space-y-4 text-xl text-zinc-600 dark:text-zinc-500 dark:text-zinc-400 max-w-2xl leading-relaxed">
             <p>
               O Guia Prático – Design e Código é um projeto pessoal em formato de documentação.
               Ele existe para organizar decisões, critérios e boas práticas que surgem no dia a dia de quem projeta e implementa interfaces digitais.
@@ -30,7 +30,7 @@ export default function SobrePage() {
           <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500">
             Por que ele existe
           </h2>
-          <div className="prose prose-zinc dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400">
+          <div className="prose prose-zinc dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-500 dark:text-zinc-400">
             <p>
               Existe um ruído recorrente entre:
             </p>
@@ -56,19 +56,19 @@ export default function SobrePage() {
               <p>Este conteúdo é pensado para:</p>
               <ul className="space-y-3 text-zinc-700 dark:text-zinc-300 text-sm">
                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   UX/UI Designers que querem decisões mais viáveis
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   Desenvolvedores front-end que querem interfaces mais bem resolvidas
                 </li>
                  <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   Pessoas que atuam na interseção entre design, produto e engenharia
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   Quem se identifica com o papel de Design Technologist
                 </li>
               </ul>
@@ -89,19 +89,19 @@ export default function SobrePage() {
               <p className="font-medium text-sm">Use este guia para:</p>
               <ul className="space-y-3 text-zinc-700 dark:text-zinc-300 text-sm">
                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   validar decisões
                 </li>
                  <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   revisar padrões
                 </li>
                  <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   alinhar design e implementação
                 </li>
                 <li className="flex items-start">
-                  <span className="mr-3 text-zinc-400">—</span>
+                  <span className="mr-3 text-zinc-500 dark:text-zinc-400">—</span>
                   evitar retrabalho
                 </li>
               </ul>

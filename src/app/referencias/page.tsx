@@ -14,7 +14,7 @@ export default function ReferenciasPage() {
             </h1>
             <Badge variant="in_progress">Em andamento</Badge>
           </div>
-          <div className="space-y-4 text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
+          <div className="space-y-4 text-xl text-zinc-600 dark:text-zinc-500 dark:text-zinc-400 max-w-2xl leading-relaxed">
             <h2 className="text-2xl font-medium text-[var(--foreground)] mb-2">Como usar esta página</h2>
             <p>
               Esta não é uma lista exaustiva nem um compilado de tendências.
@@ -39,7 +39,7 @@ export default function ReferenciasPage() {
                 <li>
                     <a href="https://m3.material.io/" target="_blank" className="block group">
                         <span className="font-medium text-[var(--foreground)] flex items-center gap-2 group-hover:underline">
-                            Material Design <ExternalLink size={12} className="text-zinc-400"/>
+                            Material Design <ExternalLink size={12} className="text-zinc-500 dark:text-zinc-400"/>
                         </span>
                         <span className="text-sm text-zinc-500 block">Princípios de interação e estados</span>
                     </a>
@@ -47,7 +47,7 @@ export default function ReferenciasPage() {
                  <li>
                     <a href="https://www.nngroup.com/" target="_blank" className="block group">
                         <span className="font-medium text-[var(--foreground)] flex items-center gap-2 group-hover:underline">
-                             Nielsen Norman Group <ExternalLink size={12} className="text-zinc-400"/>
+                             Nielsen Norman Group <ExternalLink size={12} className="text-zinc-500 dark:text-zinc-400"/>
                         </span>
                         <span className="text-sm text-zinc-500 block">Pesquisa, usabilidade e comportamento</span>
                     </a>
@@ -55,7 +55,7 @@ export default function ReferenciasPage() {
                  <li>
                     <a href="https://design-system.service.gov.uk/" target="_blank" className="block group">
                         <span className="font-medium text-[var(--foreground)] flex items-center gap-2 group-hover:underline">
-                            GOV.UK Design System <ExternalLink size={12} className="text-zinc-400"/>
+                            GOV.UK Design System <ExternalLink size={12} className="text-zinc-500 dark:text-zinc-400"/>
                         </span>
                         <span className="text-sm text-zinc-500 block">Clareza, acessibilidade e decisões pragmáticas</span>
                     </a>
@@ -94,7 +94,7 @@ export default function ReferenciasPage() {
                 <li>
                      <a href="https://developer.mozilla.org/" target="_blank" className="block group">
                          <span className="font-medium text-[var(--foreground)] flex items-center gap-2 group-hover:underline">
-                            MDN Web Docs <ExternalLink size={12} className="text-zinc-400"/>
+                            MDN Web Docs <ExternalLink size={12} className="text-zinc-500 dark:text-zinc-400"/>
                         </span>
                         <span className="text-sm text-zinc-500 block">HTML, CSS e acessibilidade</span>
                      </a>

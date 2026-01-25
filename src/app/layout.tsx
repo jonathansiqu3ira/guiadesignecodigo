@@ -4,6 +4,7 @@ import "./globals.css";
 import { Sidebar } from "@/components/Sidebar";
 import { MobileNav } from "@/components/MobileNav";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { GlobalToastProvider } from "@/components/ui/use-toast";
 import type { Metadata } from "next";
 
 const inter = Inter({
@@ -55,13 +56,15 @@ export default function RootLayout({
         className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
       >
         <ThemeProvider>
-          <div className="flex min-h-screen">
-            <Sidebar />
-            <MobileNav />
-            <main className="flex-1 p-8 md:p-12 md:pl-80 transition-all duration-300">
-              {children}
-            </main>
-          </div>
+          <GlobalToastProvider>
+            <div className="flex min-h-screen">
+              <Sidebar />
+              <MobileNav />
+              <main className="flex-1 p-8 md:p-12 md:pl-80 transition-all duration-300">
+                {children}
+              </main>
+            </div>
+          </GlobalToastProvider>
         </ThemeProvider>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HBL7C5DFLQ"
