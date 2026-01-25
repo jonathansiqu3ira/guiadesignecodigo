@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+}
+
+:root {
+  /* Technical Off-White Theme */
+  --background: #FAFAFA;
+  --foreground: #171717;
+  
+  /* Border colors for technical look */
+  --technical-border: #E5E5E5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0F0F0F;
+    --foreground: #E5E5E5;
+    --technical-border: #2A2A2A;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-inter), sans-serif;
+}
+
+@layer utilities {
+  .technical-border {
+    @apply border border-[var(--technical-border)];
+  }
+}
