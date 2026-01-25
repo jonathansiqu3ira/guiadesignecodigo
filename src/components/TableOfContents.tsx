@@ -17,10 +17,15 @@ export function TableOfContents() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   useEffect(() => {
-    // 1. Find all H2 and H3 elements in the main content area
-    const elements = Array.from(document.querySelectorAll("h2, h3"));
+    // 1. Find all H2 and H3 elements in the main content area (ignore sidebar/nav)
+    const main = document.querySelector("main");
+    if (!main) return;
+    
+    const elements = Array.from(main.querySelectorAll("h2, h3"));
     
     // 2. Generate IDs for them if they don't have one
+    const seenIds = new Map<string, number>();
+    
     const items: Heading[] = elements.map((element) => {
       let id = element.id;
       if (!id) {
@@ -30,8 +35,17 @@ export function TableOfContents() {
           .replace(/\s+/g, "-") // replace spaces with dashes
           .replace(/^-+|-+$/g, "") // remove leading/trailing dashes
            || "heading";
-        element.id = id;
       }
+
+      // Deduplicate IDs
+      const count = seenIds.get(id) || 0;
+      if (count > 0) {
+        const originalId = id;
+        id = `${id}-${count}`;
+        // Update the element's id in DOM so anchors work
+        element.id = id; 
+      }
+      seenIds.set(id.replace(/-\d+$/, ''), count + 1); // Increment count for base ID
 
       return {
         id,
@@ -59,7 +73,7 @@ export function TableOfContents() {
     return () => observer.disconnect();
   }, []);
 
-  if (headings.length === 0) return null;
+  if (headings.length < 2) return null;
 
   return (
     <nav>

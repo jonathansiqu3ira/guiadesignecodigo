@@ -24,7 +24,7 @@ const navigation: NavSection[] = [
     items: [
       { label: 'Introdução', href: '/' },
       { label: 'Sobre', href: '/sobre' },
-      { label: 'Design & Código', href: '/fundamentos/design-codigo', status: 'in_progress' },
+      { label: 'Design & Código', href: '/fundamentos/design-codigo', status: 'production' },
       { label: 'Referências', href: '/referencias', status: 'production' },
     ]
   },
@@ -41,7 +41,7 @@ const navigation: NavSection[] = [
   {
     title: 'Componentes',
     items: [
-      { label: 'Botões', href: '/componentes/botoes', status: 'in_progress' },
+      { label: 'Botões', href: '/componentes/botoes', status: 'production' },
       { label: 'Inputs', href: '/componentes/inputs', status: 'production' },
     ]
   }

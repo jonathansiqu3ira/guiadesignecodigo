@@ -1,4 +1,5 @@
 import { TableOfContents } from "@/components/TableOfContents";
+import { Compass, BookOpen, Layout, Bookmark } from "lucide-react";
 
 export default function Home() {
   return (
@@ -48,26 +49,26 @@ export default function Home() {
           <h2 className="text-sm font-semibold uppercase tracking-wider text-zinc-500 mb-6">Formato do conteúdo</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm text-[var(--foreground)]">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 flex items-center justify-center border border-[var(--technical-border)] rounded-sm text-zinc-500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+              <div className="w-8 h-8 flex items-center justify-center border border-[var(--technical-border)] rounded-sm text-zinc-500 bg-zinc-50 dark:bg-zinc-900/50">
+                <Compass size={18} />
               </div>
               <span>Navegação clara e previsível</span>
             </div>
             <div className="flex items-center gap-3">
-               <div className="w-8 h-8 flex items-center justify-center border border-[var(--technical-border)] rounded-sm text-zinc-500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+               <div className="w-8 h-8 flex items-center justify-center border border-[var(--technical-border)] rounded-sm text-zinc-500 bg-zinc-50 dark:bg-zinc-900/50">
+                <BookOpen size={18} />
               </div>
               <span>Conteúdo focado em leitura</span>
             </div>
             <div className="flex items-center gap-3">
-               <div className="w-8 h-8 flex items-center justify-center border border-[var(--technical-border)] rounded-sm text-zinc-500">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+               <div className="w-8 h-8 flex items-center justify-center border border-[var(--technical-border)] rounded-sm text-zinc-500 bg-zinc-50 dark:bg-zinc-900/50">
+                <Layout size={18} />
               </div>
               <span>Estrutura consistente entre páginas</span>
             </div>
             <div className="flex items-center gap-3">
-               <div className="w-8 h-8 flex items-center justify-center border border-[var(--technical-border)] rounded-sm text-zinc-500">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+               <div className="w-8 h-8 flex items-center justify-center border border-[var(--technical-border)] rounded-sm text-zinc-500 bg-zinc-50 dark:bg-zinc-900/50">
+                 <Bookmark size={18} />
               </div>
               <span>Organização para consulta recorrente</span>
             </div>
