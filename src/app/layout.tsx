@@ -19,6 +19,29 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Guia Design e Código",
   description: "Um guia prático sobre a relação entre design e implementação.",
+  openGraph: {
+    title: "Guia Prático – Design e Código",
+    description: "Documentação de processos de design e código. Um guia pessoal sobre como design se sustenta quando o código começa.",
+    url: "https://guiadesignecodigo.com.br", // Replacing with actual domain if known, else relative works best if metadataBase is set. Using .com.br as placeholder or relative. User didn't specify domain options, but Next.js needs absolute or metadataBase.
+    siteName: "Guia Design e Código",
+    images: [
+      {
+        url: "/screenshot.png",
+        width: 1200,
+        height: 630,
+        alt: "Preview do Guia Prático Design e Código",
+      },
+    ],
+    locale: "pt_BR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Guia Prático – Design e Código",
+    description: "Um guia prático sobre a relação entre design e implementação.",
+    images: ["/screenshot.png"],
+  },
+  metadataBase: new URL("https://guiadesignecodigo.vercel.app"), // Placeholder for Vercel deployment, or I can ask user. Best to set something reasonable to avoid build warning.
 };
 
 export default function RootLayout({
