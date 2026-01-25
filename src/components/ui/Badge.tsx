@@ -7,7 +7,6 @@ export type BadgeVariant =
   | 'accessible' 
   | 'attention' 
   | 'standard'
-  | 'available'
   | 'in_progress';
 
 interface BadgeProps {
@@ -23,7 +22,6 @@ const variants: Record<BadgeVariant, string> = {
   accessible: "bg-blue-50 text-blue-800 border-blue-200 dark:bg-blue-950/30 dark:text-blue-400 dark:border-blue-800",
   attention: "bg-rose-50 text-rose-800 border-rose-200 dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800",
   standard: "bg-purple-50 text-purple-800 border-purple-200 dark:bg-purple-950/30 dark:text-purple-400 dark:border-purple-800",
-  available: "bg-emerald-500/10 text-emerald-700 border-emerald-500/20 shadow-[0_0_10px_-4px_rgba(16,185,129,0.3)] dark:text-emerald-400 dark:border-emerald-500/30 dark:shadow-[0_0_10px_-4px_rgba(52,211,153,0.3)]",
   in_progress: "bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-amber-400 dark:border-amber-500/30",
 };
 

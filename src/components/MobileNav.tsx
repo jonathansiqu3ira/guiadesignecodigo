@@ -25,7 +25,7 @@ const navigation: NavSection[] = [
     items: [
       { label: 'Introdução', href: '/' },
       { label: 'Sobre', href: '/sobre' },
-      { label: 'Design & Código', href: '/fundamentos/design-codigo', status: 'available' },
+      { label: 'Design & Código', href: '/fundamentos/design-codigo' },
       { label: 'Referências', href: '/referencias', status: 'in_progress' },
     ]
   },
@@ -54,7 +54,6 @@ export function MobileNav() {
   // Status map (duplicating to match sidebar logic)
   const getStatusLabel = (status: BadgeVariant) => {
     switch (status) {
-      case 'available': return 'Disponível';
       case 'in_progress': return 'Em andamento';
       default: return 'Em produção';
     }
