@@ -1,4 +1,5 @@
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Sidebar } from "@/components/Sidebar";
 import { Providers } from "./providers";
@@ -30,6 +31,19 @@ export default function RootLayout({
             {children}
           </main>
         </Providers>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-HBL7C5DFLQ"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-HBL7C5DFLQ');
+          `}
+        </Script>
       </body>
     </html>
   );
