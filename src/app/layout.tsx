@@ -27,7 +27,7 @@ export default function RootLayout({
       >
         <Providers attribute="class" defaultTheme="system" enableSystem>
           <Sidebar />
-          <main className="flex-1 md:ml-64 p-8 md:p-12 lg:p-16 max-w-4xl mx-auto">
+          <main className="flex-1 md:ml-64 p-8 md:p-12 lg:p-16 max-w-[1400px] mx-auto">
             {children}
           </main>
         </Providers>

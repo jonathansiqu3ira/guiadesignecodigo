@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { ThemeToggle } from './ThemeToggle';
-import { StatusBadge } from './ui/StatusBadge';
+import { Badge, BadgeVariant } from './ui/Badge';
 import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -10,7 +10,7 @@ import { cn } from '@/lib/utils';
 interface NavItem {
   label: string;
   href: string;
-  status?: 'available' | 'production';
+  status?: BadgeVariant;
 }
 
 interface NavSection {
@@ -24,49 +24,25 @@ const navigation: NavSection[] = [
     items: [
       { label: 'Introdução', href: '/' },
       { label: 'Sobre', href: '/sobre' },
+      { label: 'Design & Código', href: '/fundamentos/design-codigo', status: 'in_progress' },
+      { label: 'Referências', href: '/referencias', status: 'production' },
     ]
   },
   {
     title: 'Fundamentos',
     items: [
-      { label: 'UX básico aplicado', href: '/fundamentos/ux', status: 'production' },
+      { label: 'Tipografia', href: '/fundamentos/tipografia', status: 'production' },
+      { label: 'Cores', href: '/fundamentos/cores', status: 'production' },
+      { label: 'Grid & Layout', href: '/fundamentos/grid', status: 'production' },
       { label: 'Acessibilidade', href: '/fundamentos/acessibilidade', status: 'production' },
-      { label: 'Usabilidade', href: '/fundamentos/usabilidade', status: 'production' },
-    ]
-  },
-  {
-    title: 'Design & Código',
-    items: [
-      { label: 'Relação entre design e implementação', href: '/fundamentos/design-codigo' },
-      { label: 'Decisões orientadas ao código', href: '/fundamentos/decisoes', status: 'production' },
-    ]
-  },
-  {
-    title: 'Tipografia',
-    items: [
-      { label: 'Hierarquia', href: '/fundamentos/tipografia' },
-      { label: 'Legibilidade', href: '/fundamentos/legibilidade', status: 'production' },
-    ]
-  },
-  {
-    title: 'Cores',
-    items: [
-      { label: 'Uso funcional', href: '/fundamentos/cores' },
-      { label: 'Contraste', href: '/fundamentos/contraste', status: 'production' },
-    ]
-  },
-  {
-    title: 'Grid & Layout',
-    items: [
-      { label: 'Estrutura e responsividade', href: '/fundamentos/grid' },
+      { label: 'UX & Usabilidade', href: '/fundamentos/ux', status: 'production' },
     ]
   },
   {
     title: 'Componentes',
     items: [
-      { label: 'Visão geral', href: '/componentes/overview', status: 'production' },
-      { label: 'Botões', href: '/componentes/botoes' },
-      { label: 'Inputs', href: '/componentes/inputs' },
+      { label: 'Botões', href: '/componentes/botoes', status: 'in_progress' },
+      { label: 'Inputs', href: '/componentes/inputs', status: 'production' },
     ]
   }
 ];
@@ -82,13 +58,25 @@ export function Sidebar() {
     );
   };
 
+  const getStatusLabel = (status: BadgeVariant) => {
+    switch (status) {
+      case 'available': return 'Disponível';
+      case 'in_progress': return 'Em andamento';
+      default: return 'Em produção';
+    }
+  };
+
   return (
     <aside className="fixed left-0 top-0 h-screen w-64 border-r border-[var(--technical-border)] bg-[var(--background)] hidden md:flex flex-col">
       <div className="p-6 border-b border-[var(--technical-border)]">
-        <div className="font-medium tracking-tight">
+        <Link 
+          href="/" 
+          className="block font-medium tracking-tight hover:opacity-70 transition-opacity focus-visible:ring-2 focus-visible:ring-zinc-400 rounded-sm outline-none"
+          aria-label="Voltar para a página inicial"
+        >
           Guia Prático<br />
           <span className="text-zinc-500">Design e Código</span>
-        </div>
+        </Link>
       </div>
 
       <nav className="flex-1 overflow-y-auto p-6">
@@ -127,19 +115,23 @@ export function Sidebar() {
                   <ul className="overflow-hidden space-y-2 pl-1">
                     {section.items.map((item) => (
                       <li key={item.href}>
-                        {item.status === 'production' ? (
-                          <div className="flex items-center justify-between py-1 px-0 text-sm text-zinc-400 cursor-default select-none group/item">
-                            <span className="truncate mr-2">{item.label}</span>
-                            <StatusBadge className="opacity-70 group-hover/item:opacity-100 transition-opacity" />
-                          </div>
-                        ) : (
-                          <Link 
-                            href={item.href}
-                            className="block py-1.5 px-2 text-sm text-zinc-600 hover:text-black hover:bg-zinc-100 dark:text-zinc-400 dark:hover:text-white dark:hover:bg-zinc-800/50 transition-colors rounded-md focus-ring"
-                          >
-                            {item.label}
-                          </Link>
-                        )}
+                        <Link 
+                          href={item.href}
+                          className={cn(
+                            "flex items-center justify-between py-1.5 px-2 text-sm rounded-md transition-colors focus-ring group",
+                            "text-zinc-600 hover:text-black hover:bg-zinc-100 dark:text-zinc-400 dark:hover:text-white dark:hover:bg-zinc-800/50"
+                          )}
+                        >
+                          <span>{item.label}</span>
+                          {item.status && (
+                            <Badge 
+                              variant={item.status} 
+                              className="ml-2 px-1.5 py-0.5 text-[9px] h-5 pointer-events-none"
+                            >
+                              {getStatusLabel(item.status)}
+                            </Badge>
+                          )}
+                        </Link>
                       </li>
                     ))}
                   </ul>

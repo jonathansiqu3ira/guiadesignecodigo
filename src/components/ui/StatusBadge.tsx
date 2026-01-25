@@ -1,25 +1,15 @@
-import { cn } from "@/lib/utils";
-
+import { Badge, BadgeVariant } from "./Badge";
 
 export interface StatusBadgeProps {
   children?: React.ReactNode;
   className?: string;
+  variant?: BadgeVariant;
 }
 
-export function StatusBadge({ children = "Em produção", className }: StatusBadgeProps) {
-  const text = typeof children === 'string' ? children : "Em produção";
-
+export function StatusBadge({ children = "Em produção", className, variant = "production" }: StatusBadgeProps) {
   return (
-    <span 
-      title={text}
-      className={cn(
-        "inline-flex items-center justify-center px-1.5 py-0.5 rounded text-[10px] font-medium whitespace-nowrap overflow-hidden text-ellipsis max-w-[100px]",
-        "bg-zinc-100 text-zinc-500 border border-zinc-200",
-        "dark:bg-zinc-800 dark:text-zinc-500 dark:border-zinc-700",
-        className
-      )}
-    >
+    <Badge variant={variant} className={className}>
       {children}
-    </span>
+    </Badge>
   );
 }
