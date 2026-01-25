@@ -7,26 +7,27 @@
 }
 
 :root {
-  /* Refined Light Theme */
-  --background: #FFFFFF;
-  --surface: #F4F4F5; /* Zinc-100 */
-  --foreground: #09090B; /* Zinc-950 */
-  --foreground-muted: #52525B; /* Zinc-600 - Improved for contrast (7:1) */
-  --border: #D4D4D8; /* Zinc-300 - Improved structure definition */
-  
-  /* Legacy/Technical compatibility */
-  --technical-border: var(--border);
-}
-
-.dark {
-  /* Refined Dark Theme */
-  --background: #09090B; /* Zinc-950 - Avoid pure black */
+  /* Refined Dark Theme by Default */
+  --background: #09090B; /* Zinc-950 */
   --surface: #18181B; /* Zinc-900 */
   --foreground: #FAFAFA; /* Zinc-50 */
   --foreground-muted: #A1A1AA; /* Zinc-400 */
   --border: #27272A; /* Zinc-800 */
   
   --technical-border: var(--border);
+  color-scheme: dark;
+}
+
+.light {
+  /* Reserved for future exploration */
+  --background: #FFFFFF;
+  --surface: #F4F4F5; /* Zinc-100 */
+  --foreground: #09090B; /* Zinc-950 */
+  --foreground-muted: #52525B; /* Zinc-600 */
+  --border: #D4D4D8; /* Zinc-300 */
+  
+  --technical-border: var(--border);
+  color-scheme: light;
 }
 
 body {

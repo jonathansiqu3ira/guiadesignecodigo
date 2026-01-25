@@ -1,7 +1,6 @@
 "use client";
 
 import Link from 'next/link';
-import { ThemeToggle } from './ThemeToggle';
 import { Badge, BadgeVariant } from './ui/Badge';
 import { useState } from 'react';
 import { ChevronRight } from 'lucide-react';
@@ -146,7 +145,6 @@ export function Sidebar() {
         <div className="text-xs text-zinc-500 dark:text-zinc-400">
           v0.1.1
         </div>
-        <ThemeToggle />
       </div>
     </aside>
   );

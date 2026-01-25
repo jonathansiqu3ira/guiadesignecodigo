@@ -5,7 +5,6 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { Badge, BadgeVariant } from "./ui/Badge";
-import { ThemeToggle } from "./ThemeToggle";
 
 // Duplicating config for now strictly to avoid export issues, 
 // normally would extract to a shared config file.
@@ -137,7 +136,6 @@ export function MobileNav() {
 
         <div className="p-4 border-t border-[var(--technical-border)] flex items-center justify-between">
           <div className="text-xs text-zinc-400">v0.1.1</div>
-          <ThemeToggle />
         </div>
       </div>
     </div>
