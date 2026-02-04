@@ -133,20 +133,44 @@ export default function TipografiaPage() {
           </ul>
         </section>
 
-         <section className="space-y-6">
-          <h2 className="text-xl font-medium text-[var(--foreground)]">Tipografia e implementação</h2>
+        <section className="space-y-6">
+          <h2 className="text-xl font-medium text-[var(--foreground)]">Tipografia no código</h2>
           <p className="text-base text-zinc-600 dark:text-zinc-400">
-            No código, a tipografia deve ser sistemática. Evite valores hardcoded.
+            A tipografia no front-end é um sistema, não um conjunto de valores isolados. Para garantir manutenção e consistência, a implementação deve refletir as decisões de design.
           </p>
           <ul className="space-y-2 text-base text-zinc-600 dark:text-zinc-400">
             <li>
-              Use <strong>Design Tokens</strong> (ex: classes do Tailwind como <code>text-sm</code>, <code>font-medium</code>). Isso garante que se a escala mudar no design system global, a interface inteira se adapta.
+              <strong className="text-[var(--foreground)]">Tokens Semânticos:</strong> Use abstrações como <code>text-body</code> ou <code>font-heading</code> em vez de valores brutos. Isso desacopla a decisão de design da implementação técnica.
             </li>
             <li>
-              Evite classes utilitárias arbitrárias como <code>text-[17px]</code> a menos que seja um caso de exceção extrema.
+              <strong className="text-[var(--foreground)]">Escalas modulares:</strong> Defina tamanhos (t-shirt sizing: xs, sm, md, lg, xl) que crescem em progressão previsível, evitando números mágicos e ajustes arbitrários.
             </li>
             <li>
-              Verifique o contraste automaticamente via dev tools ou linters para garantir WCAG AA ou AAA.
+              <strong className="text-[var(--foreground)]">Manutenção centralizada:</strong> Alterar a fonte base ou a escala no arquivo de configuração deve propagar a mudança para todo o produto automaticamente, sem refatoração manual de arquivos.
+            </li>
+            <li>
+              <strong className="text-[var(--foreground)]">Unidades relativas:</strong> Use <code>rem</code> em vez de <code>px</code> para garantir que a tipografia respeite as preferências de escala do navegador do usuário.
+            </li>
+          </ul>
+        </section>
+
+        <section className="space-y-6">
+          <h2 className="text-xl font-medium text-[var(--foreground)]">Como argumentar a importância da tipografia</h2>
+          <p className="text-base text-zinc-600 dark:text-zinc-400">
+            Tipografia é funcionalidade, não apenas estética. Para defender decisões tipográficas em um contexto de produto, foque no impacto mensurável:
+          </p>
+          <ul className="space-y-2 text-base text-zinc-600 dark:text-zinc-400">
+            <li>
+              <strong className="text-[var(--foreground)]">A leitura é a interface:</strong> Cerca de 90% da web é texto. Melhorar a tipografia é, na prática, melhorar a usabilidade central do produto.
+            </li>
+            <li>
+              <strong className="text-[var(--foreground)]">Redução de Custo Cognitivo:</strong> Boas escolhas tipográficas organizam a informação visualmente, permitindo que o usuário complete tarefas mais rápido e com menos erros de interpretação.
+            </li>
+            <li>
+              <strong className="text-[var(--foreground)]">Acessibilidade:</strong> Contraste adequado e hierarquia clara não são "bônus", são requisitos legais e éticos que ampliam o público potencial do produto.
+            </li>
+            <li>
+              <strong className="text-[var(--foreground)]">Eficiência de Manutenção:</strong> Um sistema tipográfico padronizado reduz o tempo de desenvolvimento e QA, eliminando discussões recorrentes sobre ajustes finos arbitrários.
             </li>
           </ul>
         </section>
