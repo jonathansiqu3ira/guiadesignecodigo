@@ -43,7 +43,7 @@ export default function TipografiaPage() {
           <h2 className="text-xl font-medium text-[var(--foreground)]">Fontes</h2>
           <div className="grid gap-6 md:grid-cols-2">
             <div className="p-6 border border-[var(--technical-border)] rounded-lg bg-zinc-50/50 dark:bg-zinc-900/50">
-              <h3 className="font-medium text-[var(--foreground)] mb-2">Fonte Primária</h3>
+              <h3 className="text-lg font-medium text-[var(--foreground)] mb-2">Fonte Primária</h3>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
                 Inter (Sans-serif)
               </p>
@@ -52,7 +52,7 @@ export default function TipografiaPage() {
               </p>
             </div>
             <div className="p-6 border border-[var(--technical-border)] rounded-lg bg-zinc-50/50 dark:bg-zinc-900/50">
-              <h3 className="font-medium text-[var(--foreground)] mb-2">Fonte Secundária</h3>
+              <h3 className="text-lg font-medium text-[var(--foreground)] mb-2">Fonte Secundária</h3>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
                 JetBrains Mono (Monospace)
               </p>
@@ -202,7 +202,7 @@ export default function TipografiaPage() {
               rel="noopener noreferrer"
               className="p-4 border border-[var(--technical-border)] rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors block"
             >
-              <h3 className="font-medium text-[var(--foreground)] mb-1 flex items-center gap-2">
+              <h3 className="text-lg font-medium text-[var(--foreground)] mb-1 flex items-center gap-2">
                 Nielsen Norman Group
                 <span className="text-xs text-zinc-400">↗</span>
               </h3>
@@ -217,7 +217,7 @@ export default function TipografiaPage() {
               rel="noopener noreferrer"
               className="p-4 border border-[var(--technical-border)] rounded-lg hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors block"
             >
-              <h3 className="font-medium text-[var(--foreground)] mb-1 flex items-center gap-2">
+              <h3 className="text-lg font-medium text-[var(--foreground)] mb-1 flex items-center gap-2">
                 Material Design – Typography
                 <span className="text-xs text-zinc-400">↗</span>
               </h3>
