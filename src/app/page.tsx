@@ -1,4 +1,5 @@
 import { TableOfContents } from "@/components/TableOfContents";
+import { LatestUpdates } from "@/components/LatestUpdates";
 import { Compass, BookOpen, Layout, Bookmark } from "lucide-react";
 
 export default function Home() {
@@ -109,9 +110,10 @@ export default function Home() {
 
       </article>
 
-      {/* TOC */}
+      {/* Sidebar */}
       <aside className="hidden xl:block w-64">
-        <div className="sticky top-12">
+        <div className="sticky top-12 space-y-12">
+          <LatestUpdates />
           <TableOfContents />
         </div>
       </aside>

@@ -1,5 +1,4 @@
 import { TableOfContents } from "@/components/TableOfContents";
-import { Badge } from "@/components/ui/Badge";
 
 export default function SobrePage() {
   return (
@@ -13,7 +12,6 @@ export default function SobrePage() {
             <h1 className="text-4xl font-medium tracking-tight text-[var(--foreground)]">
               Sobre
             </h1>
-            <Badge variant="in_progress">Em andamento</Badge>
           </div>
 
           <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-2xl">

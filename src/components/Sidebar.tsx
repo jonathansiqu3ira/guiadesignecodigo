@@ -30,7 +30,7 @@ const navigation: NavSection[] = [
   {
     title: 'Fundamentos',
     items: [
-      { label: 'Tipografia', href: '/fundamentos/tipografia', status: 'production' },
+      { label: 'Tipografia', href: '/fundamentos/tipografia' },
       { label: 'Cores', href: '/fundamentos/cores', status: 'production' },
       { label: 'Grid & Layout', href: '/fundamentos/grid', status: 'production' },
       { label: 'Acessibilidade', href: '/fundamentos/acessibilidade', status: 'production' },
