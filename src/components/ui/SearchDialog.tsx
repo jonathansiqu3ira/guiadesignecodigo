@@ -142,7 +142,10 @@ export function SearchDialog() {
               {results.map((item, index) => (
                 <li key={item.href}>
                   <button
-                    onClick={() => handleSelect(item)}
+                    onMouseDown={(e) => {
+                      e.preventDefault(); // Prevent input blur
+                      handleSelect(item);
+                    }}
                     onMouseEnter={() => setSelectedIndex(index)}
                     className={`w-full text-left px-4 py-3 flex flex-col gap-0.5 transition-colors ${
                       index === selectedIndex

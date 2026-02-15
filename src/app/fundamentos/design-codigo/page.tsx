@@ -1,5 +1,6 @@
 import { PageLayout } from "@/components/layout/PageLayout";
-import { H1, H2, H3, Paragraph, List, ListItem } from "@/components/ui/Typography";
+import { H2, H3, Paragraph, List, ListItem } from "@/components/ui/Typography";
+import { PageHeader } from "@/components/layout/PageHeader";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -11,15 +12,10 @@ export const metadata: Metadata = {
 export default function DesignCodigoPage() {
   return (
     <PageLayout>
-      {/* Header */}
-      <header className="space-y-6">
-        <H1 className="mb-4">Relação Design e Código</H1>
-        <Paragraph className="text-xl text-[var(--foreground-muted)]">
-           Design e código não são etapas isoladas. São decisões diferentes
-           sobre a mesma experiência. E precisam se sustentar juntas
-           ao longo do tempo.
-        </Paragraph>
-      </header>
+      <PageHeader
+        title="Relação Design e Código"
+        description="Design e código não são etapas isoladas. São decisões diferentes sobre a mesma experiência. E precisam se sustentar juntas ao longo do tempo."
+      />
 
       {/* Design não termina no Figma */}
       <section>

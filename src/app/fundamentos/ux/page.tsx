@@ -1,7 +1,7 @@
 import { PageLayout } from "@/components/layout/PageLayout";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { H2, H3, Paragraph, List, ListItem } from "@/components/ui/Typography";
 import { Callout } from "@/components/ui/Callout";
+import { PageHeader } from "@/components/layout/PageHeader";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -12,113 +12,70 @@ export const metadata: Metadata = {
 export default function UXPage() {
   return (
     <PageLayout>
-      <PageHeader 
-        title="UX & Usabilidade" 
-        status="in_progress"
-        description="Princípios de usabilidade que orientam decisões de interface. Do conceito à implementação."
+      <PageHeader
+        title="UX & Usabilidade"
+        description="Decisões de interface que tornam o produto previsível, eficiente e confortável. UX não é só wireframe, é a qualidade final da interação."
+        status="production"
       />
 
-      <section className="space-y-4">
-        <H2>O que é UX no contexto deste guia</H2>
+      <section>
+        <H2>Heurísticas (Nielsen) Aplicadas</H2>
         <Paragraph>
-          UX aqui não é sobre pesquisa com usuários ou métricas de conversão. 
-          É sobre as decisões de interface que tornam o produto <strong>previsível, 
-          eficiente e confortável</strong> de usar. Princípios que guiam a 
-          implementação, não só o wireframe.
+          Framework rápido para avaliar se sua interface está "quebrada" ou fluida.
         </Paragraph>
+
+        <div className="space-y-8 mt-6">
+          <div>
+            <H3 className="mt-0">1. Feedback do Sistema</H3>
+            <Paragraph className="text-sm text-[var(--foreground-muted)]">
+              O usuário precisa saber o que está acontecendo. Se clicou, algo deve mudar. Se carregou, deve haver indicador.
+            </Paragraph>
+          </div>
+
+          <div>
+            <H3 className="mt-0">2. Prevenção de Erros</H3>
+            <Paragraph className="text-sm text-[var(--foreground-muted)]">
+              Melhor que uma boa mensagem de erro é um design que evita o erro. (Ex: input de data formatado evita erro de digitação).
+            </Paragraph>
+          </div>
+
+          <div>
+            <H3 className="mt-0">3. Reconhecimento vs. Memorização</H3>
+            <Paragraph className="text-sm text-[var(--foreground-muted)]">
+              Não obrigue o usuário a lembrar de nada. Mostre as opções. (Ex: Menu visível é melhor que atalhos ocultos).
+            </Paragraph>
+          </div>
+        </div>
       </section>
 
-      <section className="space-y-4">
-        <H2>Heurísticas de Nielsen aplicadas</H2>
-        <Paragraph>
-          As 10 heurísticas de Nielsen são um framework atemporal para avaliar interfaces. 
-          Aqui estão as mais relevantes para quem constrói com código:
-        </Paragraph>
-
-        <H3>1. Visibilidade do status do sistema</H3>
-        <Paragraph>
-          O usuário precisa saber o que está acontecendo. Loading states, 
-          feedback de ação (toast, badge de status) e indicadores de progresso 
-          não são extras. São obrigatórios.
-        </Paragraph>
-
-        <H3>2. Correspondência com o mundo real</H3>
-        <Paragraph>
-          Use linguagem que o usuário reconhece. Evite jargão técnico em 
-          labels e mensagens. "Confirmar envio" é melhor que "Submit".
-        </Paragraph>
-
-        <H3>3. Controle e liberdade do usuário</H3>
-        <Paragraph>
-          Erros acontecem. Ofereça saídas de emergência: desfazer, cancelar, 
-          voltar. Nunca force um caminho sem retorno.
-        </Paragraph>
-
-        <H3>4. Consistência e padrões</H3>
-        <Paragraph>
-          Comportamentos similares devem ter aparência similar. Se um card é 
-          clicável em uma seção, deve ser clicável em todas. Design Systems 
-          existem pra resolver exatamente isso.
-        </Paragraph>
-
-        <H3>5. Prevenção de erros</H3>
-        <Paragraph>
-          Melhor que uma boa mensagem de erro é evitar que ele aconteça. 
-          Validação em tempo real no campo de email é mais eficiente 
-          que validação após submit.
-        </Paragraph>
-      </section>
-
-      <section className="space-y-4">
-        <H2>Padrões práticos</H2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="border border-[var(--border)] rounded-lg p-5 space-y-3">
-            <H3 className="text-base mt-0">Feedback imediato</H3>
-            <List className="text-sm my-0">
-              <ListItem>Hover states em elementos clicáveis</ListItem>
-              <ListItem>Loading spinners durante processamento</ListItem>
-              <ListItem>Toast de confirmação após ações</ListItem>
-              <ListItem>Animações suaves (máx. 200ms)</ListItem>
+      <section>
+        <H2>Padrões de Interação</H2>
+        
+        <div className="grid gap-6 md:grid-cols-2 mt-6">
+          <div className="p-6 border border-[var(--border)]/60 rounded-lg bg-[var(--surface)]/50">
+            <H3 className="mt-0 mb-3 text-base">Feedback Imediato</H3>
+            <List className="mb-0 text-sm">
+              <ListItem>Hover states em tudo que é clicável.</ListItem>
+              <ListItem>Active states para feedback tátil.</ListItem>
+              <ListItem>Loading spinners próximos à ação (dentro do botão).</ListItem>
             </List>
           </div>
 
-          <div className="border border-[var(--border)] rounded-lg p-5 space-y-3">
-            <H3 className="text-base mt-0">Hierarquia de atenção</H3>
-            <List className="text-sm my-0">
-              <ListItem>Ação primária visualmente dominante</ListItem>
-              <ListItem>Ações secundárias mais discretas</ListItem>
-              <ListItem>Ações destrutivas em vermelho ou com confirmação</ListItem>
-              <ListItem>Informação menos importante com cor muted</ListItem>
-            </List>
-          </div>
-
-          <div className="border border-[var(--border)] rounded-lg p-5 space-y-3">
-            <H3 className="text-base mt-0">Formulários</H3>
-            <List className="text-sm my-0">
-              <ListItem>Labels sempre visíveis, nunca só placeholder</ListItem>
-              <ListItem>Mensagens de erro junto ao campo</ListItem>
-              <ListItem>Tab order lógico e previsível</ListItem>
-              <ListItem>Autocomplete quando possível</ListItem>
-            </List>
-          </div>
-
-          <div className="border border-[var(--border)] rounded-lg p-5 space-y-3">
-            <H3 className="text-base mt-0">Navegação</H3>
-            <List className="text-sm my-0">
-              <ListItem>Breadcrumbs para orientação</ListItem>
-              <ListItem>Estado ativo visível no menu</ListItem>
-              <ListItem>Destinos previsíveis (label = página)</ListItem>
-              <ListItem>Voltar nunca deve surpreender</ListItem>
+          <div className="p-6 border border-[var(--border)]/60 rounded-lg bg-[var(--surface)]/50">
+            <H3 className="mt-0 mb-3 text-base">Navegação Segura</H3>
+            <List className="mb-0 text-sm">
+              <ListItem>Breadcrumbs para orientação.</ListItem>
+              <ListItem>Menu ativo indicando onde estou.</ListItem>
+              <ListItem>Botão "Voltar" não destrutivo.</ListItem>
             </List>
           </div>
         </div>
       </section>
 
-      <Callout type="info" title="Referência">
-        Estas heurísticas foram definidas por Jakob Nielsen em 1994. 
-        Mais de 30 anos depois, continuam sendo o checklist mais prático 
-        para avaliar usabilidade.
+      <Callout type="info" title="UX é sobre Confiança">
+        <Paragraph className="mb-0 text-sm">
+          A cada clique não respondido ou estado confuso, o usuário perde um pouco de confiança no sistema. A soma dessas micro-frustrações é o que chamamos de "UX ruim".
+        </Paragraph>
       </Callout>
     </PageLayout>
   );

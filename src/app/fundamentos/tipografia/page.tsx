@@ -1,5 +1,6 @@
 import { PageLayout } from "@/components/layout/PageLayout";
-import { H1, H2, H3, Paragraph, List, ListItem } from "@/components/ui/Typography";
+import { H2, H3, Paragraph, List, ListItem } from "@/components/ui/Typography";
+import { PageHeader } from "@/components/layout/PageHeader";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -10,13 +11,11 @@ export const metadata: Metadata = {
 export default function TipografiaPage() {
   return (
     <PageLayout>
-      {/* Header */}
-      <header className="space-y-6">
-        <H1 className="mb-4">Tipografia</H1>
-        <Paragraph className="text-xl text-[var(--foreground-muted)]">
-          Tipografia é a infraestrutura da interface. Dita o ritmo de leitura, organiza a hierarquia e define a personalidade do produto. O usuário não percebe, mas sente.
-        </Paragraph>
-      </header>
+      <PageHeader
+        title="Tipografia"
+        description="Tipografia é a infraestrutura da interface. Dita o ritmo de leitura, organiza a hierarquia e define a personalidade do produto. O usuário não percebe, mas sente."
+        status="production"
+      />
 
       <section>
         <H2>Princípios</H2>

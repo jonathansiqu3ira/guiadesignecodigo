@@ -1,140 +1,100 @@
 import { PageLayout } from "@/components/layout/PageLayout";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { H2, H3, Paragraph, List, ListItem } from "@/components/ui/Typography";
 import { Callout } from "@/components/ui/Callout";
-import { CodeBlock } from "@/components/ui/CodeBlock";
+import { PageHeader } from "@/components/layout/PageHeader";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Botões – Guia Prático",
-  description: "Componentes de botão: ação primária, secundária e ghost. Estados, variantes e acessibilidade.",
+  description: "Hierarquia de ação, estados e boas práticas de uso para botões.",
 };
 
 export default function BotoesPage() {
   return (
     <PageLayout>
-      <PageHeader 
-        title="Botões" 
-        status="in_progress"
-        description="O componente mais básico e o mais revelador. Como um botão é construído diz muito sobre a maturidade do sistema."
+      <PageHeader
+        title="Botões"
+        description="Botões comunicam ações que os usuários podem realizar. Eles são, possivelmente, o componente interativo mais importante de qualquer interface."
+        status="production"
       />
 
-      <section className="space-y-4">
-        <H2>Variantes</H2>
+      <section>
+        <H2>Hierarquia</H2>
         <Paragraph>
-          Cada variante comunica um nível diferente de importância na hierarquia de ações.
+          Uma tela com muitos botões "chamativos" cria confusão. A hierarquia visual deve guiar o usuário para a ação principal.
         </Paragraph>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          <div className="border border-[var(--border)] rounded-lg p-5 space-y-3">
-            <H3 className="text-base mt-0">Primary</H3>
-            <div className="flex justify-center py-4">
-              <button className="px-4 py-2 bg-[var(--primary)] text-[var(--primary-foreground)] rounded-md text-sm font-medium hover:opacity-90 transition-opacity">
-                Confirmar
-              </button>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
+          <div className="p-6 border border-[var(--border)]/60 rounded-lg bg-[var(--surface)]/50">
+            <H3 className="mt-0 mb-3 text-base">Primário</H3>
+            <div className="mb-4 flex justify-center">
+              <div className="px-4 py-2 bg-[var(--primary)] text-[var(--primary-foreground)] rounded-md text-sm font-medium">Ação Principal</div>
             </div>
-            <Paragraph className="text-sm mt-2">
-              Ação principal da tela. Só deve existir <strong>uma por contexto</strong>.
+            <Paragraph className="text-sm mb-0 text-[var(--foreground-muted)]">
+              Destaque máximo. Deve haver (idealmente) apenas um por contexto/seção. É o "Happy Path" que queremos que o usuário siga.
             </Paragraph>
           </div>
 
-          <div className="border border-[var(--border)] rounded-lg p-5 space-y-3">
-            <H3 className="text-base mt-0">Secondary</H3>
-            <div className="flex justify-center py-4">
-              <button className="px-4 py-2 border border-[var(--border)] text-[var(--foreground)] rounded-md text-sm font-medium hover:bg-[var(--surface)] transition-colors">
-                Cancelar
-              </button>
+          <div className="p-6 border border-[var(--border)]/60 rounded-lg bg-[var(--surface)]/50">
+            <H3 className="mt-0 mb-3 text-base">Secundário</H3>
+               <div className="mb-4 flex justify-center">
+              <div className="px-4 py-2 border border-[var(--border)] text-[var(--foreground)] rounded-md text-sm font-medium">Cancelar</div>
             </div>
-            <Paragraph className="text-sm mt-2">
-              Ação alternativa ou complementar. Menos destaque visual.
+            <Paragraph className="text-sm mb-0 text-[var(--foreground-muted)]">
+              Apoio ou alternativa. Visível, mas sem competir com a ação principal. Usado para "Cancelar", "Voltar" ou ações secundárias.
             </Paragraph>
           </div>
 
-          <div className="border border-[var(--border)] rounded-lg p-5 space-y-3">
-            <H3 className="text-base mt-0">Ghost</H3>
-            <div className="flex justify-center py-4">
-              <button className="px-4 py-2 text-[var(--foreground-muted)] rounded-md text-sm font-medium hover:bg-[var(--surface)] transition-colors">
-                Ver mais
-              </button>
+          <div className="p-6 border border-[var(--border)]/60 rounded-lg bg-[var(--surface)]/50">
+            <H3 className="mt-0 mb-3 text-base">Terciário (Ghost)</H3>
+             <div className="mb-4 flex justify-center">
+              <div className="px-4 py-2 text-[var(--foreground-muted)] rounded-md text-sm font-medium">Ver detalhes</div>
             </div>
-            <Paragraph className="text-sm mt-2">
-              Ação terciária. Sem borda, sem fundo. Usada para ações discretas.
+            <Paragraph className="text-sm mb-0 text-[var(--foreground-muted)]">
+              Menor prioridade. Sem borda ou fundo até o hover. Usado para ações repetitivas ou contextuais que não devem poluir a tela.
             </Paragraph>
           </div>
         </div>
       </section>
 
-      <section className="space-y-4">
+      <section>
         <H2>Estados</H2>
         <Paragraph>
-          Todo botão precisa comunicar claramente seu estado atual.
+          Como elemento interativo, o botão deve responder a cada gesto do usuário.
         </Paragraph>
         <List>
-          <ListItem><strong>Default:</strong> estado de repouso, pronto para interação</ListItem>
-          <ListItem><strong>Hover:</strong> indica que o elemento é interativo (cursor + mudança visual)</ListItem>
-          <ListItem><strong>Focus:</strong> indicador visível para navegação por teclado (ring ou outline)</ListItem>
-          <ListItem><strong>Active/Pressed:</strong> feedback imediato ao clique (escala ou opacidade)</ListItem>
-          <ListItem><strong>Disabled:</strong> visualmente muted, sem interação, com cursor not-allowed</ListItem>
-          <ListItem><strong>Loading:</strong> spinner substitui o conteúdo, botão fica desabilitado</ListItem>
+          <ListItem>
+            <strong className="text-[var(--foreground)]">Hover:</strong> Indica "sou clicável".
+          </ListItem>
+          <ListItem>
+            <strong className="text-[var(--foreground)]">Active/Pressed:</strong> Feedback físico simulado do clique.
+          </ListItem>
+          <ListItem>
+            <strong className="text-[var(--foreground)]">Focus:</strong> Anel visível para navegação via teclado.
+          </ListItem>
+          <ListItem>
+            <strong className="text-[var(--foreground)]">Disabled:</strong> Inativo. Use com cuidado; às vezes é melhor ocultar o botão ou deixá-lo ativo e explicar o erro ao clicar.
+          </ListItem>
+          <ListItem>
+            <strong className="text-[var(--foreground)]">Loading:</strong> Feedback imediato após o clique, prevenindo submissões duplicadas.
+          </ListItem>
         </List>
       </section>
 
-      <section className="space-y-4">
-        <H2>Implementação</H2>
-        <CodeBlock
-          lang="tsx"
-          fileName="Button.tsx (exemplo)"
-          code={`interface ButtonProps {
-  variant?: "primary" | "secondary" | "ghost";
-  size?: "sm" | "md" | "lg";
-  disabled?: boolean;
-  loading?: boolean;
-  children: React.ReactNode;
-  onClick?: () => void;
-}
-
-export function Button({ 
-  variant = "primary", 
-  size = "md",
-  disabled,
-  loading,
-  children,
-  onClick 
-}: ButtonProps) {
-  return (
-    <button
-      onClick={onClick}
-      disabled={disabled || loading}
-      className={cn(
-        "rounded-md font-medium transition-all",
-        "focus-visible:ring-2 focus-visible:ring-offset-2",
-        variants[variant],
-        sizes[size],
-        disabled && "opacity-50 cursor-not-allowed"
-      )}
-    >
-      {loading ? <Spinner /> : children}
-    </button>
-  );
-}`}
-        />
-      </section>
-
-      <section className="space-y-4">
-        <H2>Acessibilidade</H2>
+      <section>
+        <H2>Boas Práticas</H2>
         <List>
-          <ListItem>Usar <code className="bg-[var(--surface)] px-1.5 py-0.5 rounded text-sm">{`<button>`}</code> nativo, nunca <code className="bg-[var(--surface)] px-1.5 py-0.5 rounded text-sm">{`<div onClick>`}</code></ListItem>
-          <ListItem>Botões com apenas ícone devem ter <code className="bg-[var(--surface)] px-1.5 py-0.5 rounded text-sm">aria-label</code></ListItem>
-          <ListItem>Focus ring visível obrigatório (mínimo 2px)</ListItem>
-          <ListItem>Contraste mínimo de 4.5:1 para texto do botão</ListItem>
-          <ListItem>Área de toque mínima de 44×44px em mobile</ListItem>
+          <ListItem>
+             Labels devem ser verbos ou ações claras (ex: "Salvar alterações" em vez de "Sim").
+          </ListItem>
+          <ListItem>
+             Não use botões para navegação de página (use links). Botões mudam estado ou enviam dados; Links mudam o local.
+          </ListItem>
+          <ListItem>
+            Respeite a área de toque mínima (44px/48px) em dispositivos móveis, mesmo para botões pequenos visualmente.
+          </ListItem>
         </List>
       </section>
-
-      <Callout type="info" title="Regra prática">
-        Se você tem 3+ botões primários na mesma tela, a hierarquia está errada. 
-        Revise a arquitetura de informação antes de mexer no visual.
-      </Callout>
     </PageLayout>
   );
 }

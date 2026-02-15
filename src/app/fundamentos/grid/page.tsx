@@ -1,8 +1,7 @@
 import { PageLayout } from "@/components/layout/PageLayout";
-import { PageHeader } from "@/components/layout/PageHeader";
 import { H2, H3, Paragraph, List, ListItem } from "@/components/ui/Typography";
 import { Callout } from "@/components/ui/Callout";
-import { CodeBlock } from "@/components/ui/CodeBlock";
+import { PageHeader } from "@/components/layout/PageHeader";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,94 +12,110 @@ export const metadata: Metadata = {
 export default function GridPage() {
   return (
     <PageLayout>
-      <PageHeader 
-        title="Grid & Layout" 
-        status="in_progress"
-        description="Como organizar conteúdo de forma previsível, responsiva e escalável."
+      <PageHeader
+        title="Grid & Layout"
+        description="O palco invisível onde o design acontece. Estrutura, alinhamento e consistência através de um sistema de colunas responsivo."
+        status="production"
       />
 
-      <section className="space-y-4">
-        <H2>Por que um sistema de grid</H2>
+      <section>
+        <H2>Por que usar um grid?</H2>
         <Paragraph>
-          Sem grid consistente, cada página vira uma decisão isolada. 
-          Um sistema de layout define onde o conteúdo pode existir. Cria 
-          previsibilidade pra quem navega e pra quem implementa.
+          Sem grid consistente, cada página vira uma decisão arbitrária de posicionamento. 
+          O objetivo não é rigidez, é oferecer um vocabulário comum.
         </Paragraph>
-        <Paragraph>
-          O objetivo não é rigidez. É dar um vocabulário comum pra decisões de 
-          posicionamento, espaçamento e responsividade.
-        </Paragraph>
-      </section>
-
-      <section className="space-y-4">
-        <H2>Princípios aplicados</H2>
         <List>
-          <ListItem><strong>Largura de leitura limitada:</strong> conteúdo textual respeita um máximo de ~65 caracteres por linha (65ch) para garantir legibilidade</ListItem>
-          <ListItem><strong>Espaçamento por contexto:</strong> seções usam espaçamento vertical proporcional ao peso visual do bloco</ListItem>
-          <ListItem><strong>Responsividade progressiva:</strong> o layout se adapta sem quebrar. Sidebar esconde em mobile, grid colapsa de 2 pra 1 coluna</ListItem>
-          <ListItem><strong>Hierarquia visual:</strong> sidebar fixo + área de conteúdo + aside opcional criam uma estrutura de 3 painéis</ListItem>
+          <ListItem>
+            <strong className="text-[var(--foreground)]">Previsibilidade:</strong> O usuário aprende inconscientemente onde buscar informação (padrão de leitura F ou Z).
+          </ListItem>
+          <ListItem>
+            <strong className="text-[var(--foreground)]">Ritmo:</strong> Espaçamentos consistentes criam harmonia visual e reduzem o ruído.
+          </ListItem>
+          <ListItem>
+            <strong className="text-[var(--foreground)]">Responsividade:</strong> Um bom sistema define como o conteúdo se comporta quando o espaço muda, não apenas como ele parece estático.
+          </ListItem>
         </List>
       </section>
 
-      <section className="space-y-4">
-        <H2>Estrutura de layout</H2>
-        <Paragraph>
-          Este projeto usa uma estrutura de 3 painéis com Flexbox:
-        </Paragraph>
-        <CodeBlock
-          lang="plaintext"
-          fileName="Layout Structure"
-          code={`┌──────────┬─────────────────────────┬──────────┐
-│          │                         │          │
-│ Sidebar  │    Conteúdo (article)   │  Aside   │
-│  (nav)   │      max-w: 65ch        │  (ToC)   │
-│  w: 256  │                         │  w: 256  │
-│          │                         │          │
-└──────────┴─────────────────────────┴──────────┘`}
-        />
-
-        <H3>Tokens de espaçamento</H3>
-        <CodeBlock
-          lang="css"
-          fileName="globals.css"
-          code={`/* Spacing tokens */
---spacing-container-reading: 65ch;
---spacing-section-sm: 2rem;   /* 32px */
---spacing-section-md: 4rem;   /* 64px */
---spacing-section-lg: 6rem;   /* 96px */`}
-        />
+      <section>
+        <H2>Princípios deste sistema</H2>
+        <List>
+          <ListItem>
+            <strong className="text-[var(--foreground)]">Largura de leitura (Measure):</strong> Texto corrido respeita um máximo de ~65 caracteres por linha. Linhas muito longas cansam o olho; muito curtas quebram o fluxo.
+          </ListItem>
+          <ListItem>
+             <strong className="text-[var(--foreground)]">Espaçamento relativo:</strong> Proximidade indica relação. Elementos relacionados devem estar mais próximos entre si do que de grupos diferentes.
+          </ListItem>
+          <ListItem>
+            <strong className="text-[var(--foreground)]">Alinhamento ótico:</strong> O alinhamento visual é mais importante que o matemático.
+          </ListItem>
+        </List>
       </section>
 
-      <section className="space-y-4">
-        <H2>Breakpoints</H2>
+      <section>
+        <H2>Estrutura de Layout</H2>
         <Paragraph>
-          O projeto usa os breakpoints nativos do Tailwind CSS. As mudanças 
-          principais acontecem em dois pontos:
+          Utilizamos uma estrutura de 3 painéis para interfaces desktop complexas de documentação:
         </Paragraph>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div className="border border-[var(--border)] rounded-lg p-4 space-y-2">
-            <H3 className="text-base mt-0">Mobile → Tablet (md: 768px)</H3>
-            <List className="text-sm my-0">
-              <ListItem>Sidebar esconde, MobileNav aparece</ListItem>
-              <ListItem>Grid de cards colapsa para 1 coluna</ListItem>
-              <ListItem>Padding reduz de p-12 para p-8</ListItem>
-            </List>
+        
+        <div className="grid gap-6 md:grid-cols-3 mt-6">
+          <div className="p-5 border border-[var(--border)]/60 rounded-lg bg-[var(--surface)]/50">
+            <H3 className="mt-0 mb-2 text-base">Sidebar (Navegação)</H3>
+            <Paragraph className="text-sm mb-0">
+               Fixa à esquerda. Contexto global do que existe no sistema.
+            </Paragraph>
           </div>
-          <div className="border border-[var(--border)] rounded-lg p-4 space-y-2">
-            <H3 className="text-base mt-0">Tablet → Desktop (xl: 1280px)</H3>
-            <List className="text-sm my-0">
-              <ListItem>Aside (Table of Contents) aparece</ListItem>
-              <ListItem>Layout de 3 painéis completo</ListItem>
-              <ListItem>Conteúdo centralizado com reading width</ListItem>
-            </List>
+          
+          <div className="p-5 border border-[var(--border)]/60 rounded-lg bg-[var(--surface)]/50">
+            <H3 className="mt-0 mb-2 text-base">Conteúdo (Main)</H3>
+            <Paragraph className="text-sm mb-0">
+               Fluido, mas com trava de largura máxima para leitura. Onde o usuário foca.
+            </Paragraph>
+          </div>
+
+          <div className="p-5 border border-[var(--border)]/60 rounded-lg bg-[var(--surface)]/50">
+            <H3 className="mt-0 mb-2 text-base">Aside (contexto)</H3>
+            <Paragraph className="text-sm mb-0">
+               Conteúdo de suporte (Table of Contents). Fixo à direita, desaparece em telas menores.
+            </Paragraph>
           </div>
         </div>
       </section>
 
-      <Callout type="info" title="Decisão de projeto">
-        O sidebar é fixo em desktop e o conteúdo rola independentemente.
-        Navegação sempre acessível sem consumir espaço de leitura.
+      <section>
+        <H2>Responsividade</H2>
+        <Paragraph>
+          O layout deve se adaptar ao dispositivo, não forçar o desktop numa tela pequena.
+        </Paragraph>
+
+        <div className="space-y-6 mt-6">
+          <div>
+            <H3 className="mt-0 text-base mb-2">Mobile</H3>
+            <Paragraph className="text-sm text-[var(--foreground-muted)]">
+              Foco total no conteúdo (coluna única). Navegação colapsa para drawer/menu. Padding lateral reduzido para aproveitar espaço.
+            </Paragraph>
+          </div>
+          
+          <div>
+            <H3 className="mt-0 text-base mb-2">Tablet</H3>
+            <Paragraph className="text-sm text-[var(--foreground-muted)]">
+              Grids internos começam a se formar (2 colunas). Sidebar pode ou não estar visível, dependendo da densidade da aplicação.
+            </Paragraph>
+          </div>
+
+          <div>
+            <H3 className="mt-0 text-base mb-2">Desktop</H3>
+            <Paragraph className="text-sm text-[var(--foreground-muted)]">
+              Experiência completa. Espaço branco abundante é usado para respiro, não preenchido com ruído.
+            </Paragraph>
+          </div>
+        </div>
+      </section>
+
+      <Callout type="info" title="Consistência vs. Rigidez">
+        <Paragraph className="mb-0 text-sm">
+          Um grid deve ajudar, não atrapalhar. Se o conteúdo pede uma quebra do grid padrão para melhor visualização (ex: uma tabela larga ou imagem full-width), a regra deve ser quebrada conscientemente.
+        </Paragraph>
       </Callout>
     </PageLayout>
   );
