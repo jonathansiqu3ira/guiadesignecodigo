@@ -14,7 +14,7 @@ interface Heading {
 export function TableOfContents() {
   const [headings, setHeadings] = useState<Heading[]>([]);
   const [activeId, setActiveId] = useState<string>("");
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [isExpanded, setIsExpanded] = useState(true);
 
   useEffect(() => {
     // 1. Find all H2 and H3 elements in the main content area (ignore sidebar/nav)
@@ -102,7 +102,7 @@ export function TableOfContents() {
         isExpanded ? "grid-rows-[1fr] mt-3" : "grid-rows-[0fr]"
       )}>
         <div className="overflow-hidden">
-          <ul className="space-y-3 text-sm border-l border-[var(--technical-border)] ml-[6px] pl-4">
+          <ul className="space-y-2.5 text-sm border-l border-[var(--border)]/60 ml-[6px] pl-4">
             {headings.map((heading) => (
               <li 
                 key={heading.id}

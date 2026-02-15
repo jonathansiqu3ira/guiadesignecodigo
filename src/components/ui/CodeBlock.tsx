@@ -20,9 +20,9 @@ export async function CodeBlock({ code, lang = "typescript", fileName, className
   });
 
   return (
-    <div className={cn("group rounded-lg border border-[var(--technical-border)] bg-[var(--surface)] overflow-hidden text-sm my-6", className)}>
+    <div className={cn("group rounded-lg border border-[var(--border)]/60 bg-[var(--surface)] overflow-hidden text-sm my-8", className)}>
       {(fileName) && (
-        <div className="flex items-center justify-between px-4 py-2 border-b border-[var(--technical-border)] bg-zinc-50/50 dark:bg-zinc-900/50">
+        <div className="flex items-center justify-between px-4 py-2 border-b border-[var(--border)] bg-zinc-50/50 dark:bg-zinc-900/50">
           <span className="text-xs font-medium text-zinc-500">{fileName}</span>
           <CopyButton text={code} className="-mr-2" />
         </div>

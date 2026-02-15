@@ -7,7 +7,8 @@ export type BadgeVariant =
   | 'accessible' 
   | 'attention' 
   | 'standard'
-  | 'in_progress';
+  | 'in_progress'
+  | 'planned';
 
 interface BadgeProps {
   children: React.ReactNode;
@@ -23,6 +24,7 @@ const variants: Record<BadgeVariant, string> = {
   attention: "bg-rose-50 text-rose-800 border-rose-200 dark:bg-rose-950/30 dark:text-rose-400 dark:border-rose-800",
   standard: "bg-purple-50 text-purple-800 border-purple-200 dark:bg-purple-950/30 dark:text-purple-400 dark:border-purple-800",
   in_progress: "bg-amber-500/10 text-amber-700 border-amber-500/20 dark:text-amber-400 dark:border-amber-500/30",
+  planned: "bg-zinc-100 text-zinc-400 border-zinc-200 dark:bg-zinc-800/50 dark:text-zinc-500 dark:border-zinc-800",
 };
 
 export function Badge({ children, variant = "production", className }: BadgeProps) {
@@ -32,7 +34,7 @@ export function Badge({ children, variant = "production", className }: BadgeProp
     <span 
       title={text}
       className={cn(
-        "inline-flex items-center justify-center px-2 py-0.5 rounded text-[10px] font-medium whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px] border",
+        "inline-flex items-center justify-center px-2 py-0.5 rounded-md text-[10px] font-medium whitespace-nowrap overflow-hidden text-ellipsis max-w-[120px] border border-transparent",
         variants[variant],
         className
       )}

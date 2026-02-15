@@ -14,7 +14,7 @@ export function Accordion({ title, children, defaultOpen = false }: AccordionPro
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
   return (
-    <div className="border border-[var(--technical-border)] rounded overflow-hidden">
+    <div className="border border-[var(--border)] rounded overflow-hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between p-4 bg-zinc-50/50 dark:bg-zinc-900/30 hover:bg-zinc-100 dark:hover:bg-zinc-900/50 transition-colors text-left"
@@ -35,7 +35,7 @@ export function Accordion({ title, children, defaultOpen = false }: AccordionPro
         )}
       >
         <div className="overflow-hidden">
-           <div className="p-4 pt-0 border-t border-[var(--technical-border)] bg-[var(--background)]">
+           <div className="p-4 pt-0 border-t border-[var(--border)] bg-[var(--background)]">
             <div className="pt-4 text-zinc-600 dark:text-zinc-400">
                {children}
             </div>

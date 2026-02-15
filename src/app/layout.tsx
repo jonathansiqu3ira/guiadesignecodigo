@@ -1,14 +1,15 @@
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { Hanken_Grotesk, JetBrains_Mono } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Sidebar } from "@/components/Sidebar";
+import { Footer } from "@/components/layout/Footer";
 import { MobileNav } from "@/components/MobileNav";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { GlobalToastProvider } from "@/components/ui/use-toast";
 import type { Metadata } from "next";
 
-const inter = Inter({
-  variable: "--font-inter",
+const hankenGrotesk = Hanken_Grotesk({
+  variable: "--font-hanken",
   subsets: ["latin"],
 });
 
@@ -53,15 +54,24 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${jetbrainsMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
+        className={`${hankenGrotesk.variable} ${jetbrainsMono.variable} antialiased bg-[var(--background)] text-[var(--foreground)]`}
       >
         <ThemeProvider>
           <GlobalToastProvider>
-            <div className="flex flex-col md:flex-row min-h-screen">
+            <a
+              href="#main-content"
+              className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[var(--primary)] focus:text-[var(--primary-foreground)] focus:rounded-md focus:text-sm focus:font-medium"
+            >
+              Pular para o conteúdo
+            </a>
+            <div className="flex min-h-screen">
               <Sidebar />
               <MobileNav />
-              <main className="flex-1 p-8 md:p-12 md:pl-80 transition-all duration-300">
-                {children}
+              <main id="main-content" className="flex-1 min-w-0 md:pl-72">
+                <div className="max-w-6xl mx-auto px-6 py-10 lg:px-12 lg:py-16">
+                  {children}
+                  <Footer />
+                </div>
               </main>
             </div>
           </GlobalToastProvider>

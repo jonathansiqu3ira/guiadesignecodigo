@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Badge } from "@/components/ui/Badge";
+import { H1, H2, Paragraph, List, ListItem } from "@/components/ui/Typography";
 
 export default function NotFound() {
   return (
@@ -7,33 +8,27 @@ export default function NotFound() {
       <div className="flex-1 min-w-0 max-w-3xl space-y-12 pb-12">
         <header className="space-y-6">
           <div className="flex items-center gap-3">
-             <h1 className="text-4xl font-medium tracking-tight text-[var(--foreground)]">
-              Página não encontrada
-            </h1>
+             <H1 className="mb-0">Página não encontrada</H1>
             <Badge variant="production">404</Badge>
           </div>
-          <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl leading-relaxed">
+          <Paragraph className="text-xl">
             A página que você tentou acessar não existe ou ainda não foi publicada.
             O guia está em evolução contínua e parte do conteúdo pode estar temporariamente indisponível.
-          </p>
+          </Paragraph>
         </header>
 
-        <hr className="border-[var(--technical-border)]" />
+        <hr className="border-[var(--border)]" />
 
         <section className="space-y-6">
-          <h2 className="text-xl font-medium text-[var(--foreground)]">
-            Caminhos sugeridos
-          </h2>
-          <div className="prose prose-zinc dark:prose-invert max-w-none text-zinc-600 dark:text-zinc-400">
-             <ul className="list-disc pl-5 space-y-3">
-               <li>
-                 <Link href="/" className="text-zinc-900 dark:text-zinc-100 hover:underline font-medium">Voltar para a Introdução</Link>
-               </li>
-               <li>
-                 Verifique a navegação lateral para explorar os tópicos disponíveis.
-               </li>
-             </ul>
-          </div>
+          <H2 className="mt-0">Caminhos sugeridos</H2>
+          <List>
+            <ListItem>
+              <Link href="/" className="text-[var(--foreground)] hover:underline font-medium">Voltar para a Introdução</Link>
+            </ListItem>
+            <ListItem>
+              Verifique a navegação lateral para explorar os tópicos disponíveis.
+            </ListItem>
+          </List>
         </section>
       </div>
     </div>
